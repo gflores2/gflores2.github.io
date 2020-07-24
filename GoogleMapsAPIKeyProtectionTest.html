@@ -48,7 +48,7 @@
 		var mapstaticurl;
 		var message="WARNING!! This function will randomnly request 1000 maps on random location using the key above.   You will cause charges on the owner of that key or a Denial of Service if that account is not set billing .  The purpose of this function is to cause proof of concept.   Please don't use this for evil purposes";
 		if(confirm(message)){
-		    for (var i = 0; i < 1000; i++) {
+		    for (var i = 1; i < 1000; i++) {
 		 	    lat=Math.random()*180-90;
 			    long=Math.random()*360-180;
 			    console.log("Run"+i+" Lat:"+lat+" ,Long:"+long);
