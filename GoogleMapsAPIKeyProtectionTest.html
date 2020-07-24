@@ -19,7 +19,7 @@
     <div id="map">
     <img id="mapImg"  onerror="keywellProtected()" />
     </div>
-      <div id="resultmessage"> key found</div>
+      <div id="resultmessage"> $ </div>
         <input type="button" id="run1000button" value="Run 1000 times and make owner of key spend $2USD"  onclick="show1000Maps()" style="visibility: hidden;"/>
       
     
@@ -28,7 +28,7 @@
     <script>
     function keywellProtected(){
      document.getElementById("run1000button").style.visibility = "hidden";
-  document.getElementById("resultmessage").innerText = ' The key is well protected. That means 1.Google MAPS Static API is not enabled for this key  2. Is enabled but dont allow me to use from my domain. ';
+  document.getElementById("resultmessage").innerText = ' The key is well protected. That means 1.Google MAPS Static API is not enabled for this key  2. Is enabled but dont allow me to use from my domain. To check error visit https://maps.googleapis.com/maps/api/staticmap?center=40.714%2c%20-73.998&zoom=13&size=400x400&key='+document.getElementById("KEY").value;
      
     }
     
@@ -62,3 +62,6 @@
     </script>
     
     </html>
+    
+    
+  
