@@ -33,35 +33,36 @@
     }
     
     function showMap(){
-	    var apikey=document.getElementById("KEY").value;
-	    var mapstaticurl="https://maps.googleapis.com/maps/api/staticmap?center=40.714%2c%20-73.998&zoom=13&size=400x400&key="+apikey;
-	    document.getElementById("mapImg").src = mapstaticurl;    
-  	    document.getElementById("run1000button").style.visibility = "visible";
-  
-  document.getElementById("run1000button").style.visibility = "visible";
-  document.getElementById("resultmessage").innerText = 'WARNING!!!!!!KEY NOT PROTECTED ';
-    }
+    		
+	    	var apikey=document.getElementById("KEY").value;
+	    	var mapstaticurl="https://maps.googleapis.com/maps/api/staticmap?center=40.714%2c%20-73.998&zoom=13&size=400x400&key="+apikey;
+	    	document.getElementById("mapImg").src = mapstaticurl;    
+  	    	document.getElementById("run1000button").style.visibility = "visible";
+  		document.getElementById("resultmessage").innerText = 'WARNING!!!!!!KEY NOT PROTECTED.  I am using this key to plot a Maps in my website :)';
+  		}
+    
     
      function show1000Maps(){
-	    var apikey=document.getElementById("KEY").value;
-	    var mapstaticurl;
-	    for (var i = 0; i < 1000; i++) {
-	 	    lat=Math.random()*180-90;
-		    long=Math.random()*360-180;
-		    console.log("Run"+i+" Lat:"+lat+" ,Long:"+long);
-		    
-		    var mapstaticurl="https://maps.googleapis.com/maps/api/staticmap?center="+lat+"%2c%20"+long+"&zoom=9&size=400x400&key="+apikey;
-		    document.getElementById("mapImg").src = mapstaticurl;
-		    
-		    
+	
+	        var apikey=document.getElementById("KEY").value;
+		var mapstaticurl;
+		var message="WARNING!! This function will randomnly request 1000 maps on random location using the key above.   You will cause charges on the owner of that key or a Denial of Service if that account is not set billing .  The purpose of this function is to cause proof of concept.   Please don't use this for evil purposes";
+		if(confirm(message)){
+		    for (var i = 0; i < 1000; i++) {
+		 	    lat=Math.random()*180-90;
+			    long=Math.random()*360-180;
+			    console.log("Run"+i+" Lat:"+lat+" ,Long:"+long);
+			    var mapstaticurl="https://maps.googleapis.com/maps/api/staticmap?center="+lat+"%2c%20"+long+"&zoom=9&size=400x400&key="+apikey;
+		    	   document.getElementById("mapImg").src = mapstaticurl;
+		    }
 	    }
-	    
-	    
-	        
     }
     </script>
     
     </html>
     
-    
   
+    
+
+  </body>
+</html>
