@@ -10,28 +10,55 @@
     </style>
   </head>
   <body>
-    <h3>My Google Maps Demo</h3>
+    <h2>Static Maps API Key Test by German Flores</h2>
     
-    <input type="text" id="APIKEY" value="AIzaSyCGOJbGQ95SWrXxl8wk-_cRQZcJl42bvDU">
+    Insert Google API Key: <input type="text" id="KEY" value="AIzaSyCGOJbGQ95SWrXxl8wk-_cRQZcJl42bvDU"/>
+ <input type="button" value="CheckKey"  onclick="showMap()" />
+
+  
+    <div id="map">
+    <img id="mapImg"  onerror="keywellProtected()" />
+    </div>
+      <div id="resultmessage"> key found</div>
+        <input type="button" id="run1000button" value="Run 1000 times and make owner of key spend $2USD"  onclick="show1000Maps()" style="visibility: hidden;"/>
+      
     
-    <!--The div element for the map -->
-    <div id="map"></div>
+    
+    
     <script>
-// Initialize and add the map
-function initMap() {
-  //Get API key
-  var apikey = document.getElementById('APIKEY').value;
-  // The location of Uluru
-  var uluru = {lat: -25.344, lng: 131.036};
-  // The map, centered at Uluru
-  var map = new google.maps.Map(
-      document.getElementById('map'), {zoom: 4, center: uluru});
-  // The marker, positioned at Uluru
-  var marker = new google.maps.Marker({position: uluru, map: map});
-}
+    function keywellProtected(){
+     document.getElementById("run1000button").style.visibility = "hidden";
+  document.getElementById("resultmessage").innerText = ' The key is well protected. That means 1.Google MAPS Static API is not enabled for this key  2. Is enabled but dont allow me to use from my domain. ';
+     
+    }
+    
+    function showMap(){
+	    var apikey=document.getElementById("KEY").value;
+	    var mapstaticurl="https://maps.googleapis.com/maps/api/staticmap?center=40.714%2c%20-73.998&zoom=13&size=400x400&key="+apikey;
+	    document.getElementById("mapImg").src = mapstaticurl;    
+  	    document.getElementById("run1000button").style.visibility = "visible";
+  
+  document.getElementById("run1000button").style.visibility = "visible";
+  document.getElementById("resultmessage").innerText = 'WARNING!!!!!!KEY NOT PROTECTED ';
+    }
+    
+     function show1000Maps(){
+	    var apikey=document.getElementById("KEY").value;
+	    var mapstaticurl;
+	    for (var i = 0; i < 1000; i++) {
+	 	    lat=Math.random()*180-90;
+		    long=Math.random()*360-180;
+		    console.log("Run"+i+" Lat:"+lat+" ,Long:"+long);
+		    
+		    var mapstaticurl="https://maps.googleapis.com/maps/api/staticmap?center="+lat+"%2c%20"+long+"&zoom=9&size=400x400&key="+apikey;
+		    document.getElementById("mapImg").src = mapstaticurl;
+		    
+		    
+	    }
+	    
+	    
+	        
+    }
     </script>
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key="+apikey+"&callback=initMap">
-    </script>
-  </body>
-</html>
+    
+    </html>
