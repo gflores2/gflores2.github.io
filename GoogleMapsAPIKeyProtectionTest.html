@@ -20,14 +20,14 @@
     <img id="mapImg"  onerror="keywellProtected()" />
     </div>
       <div id="resultmessage"> $ </div>
-        <input type="button" id="run1000button" value="Run 1000 times and make owner of key spend $2USD"  onclick="show1000Maps()" style="visibility: hidden;"/>
-      
+        <!--<input type="button" id="run1000button" value="Run 1000 times and make owner of key spend $2USD"  onclick="show1000Maps()" style="visibility: hidden;"/>
+     --> 
     
     
     
     <script>
     function keywellProtected(){
-     document.getElementById("run1000button").style.visibility = "hidden";
+     //document.getElementById("run1000button").style.visibility = "hidden";
   document.getElementById("resultmessage").innerText = ' The key is well protected. That means 1.Google MAPS Static API is not enabled for this key  2. Is enabled but dont allow me to use from my domain. To check error visit https://maps.googleapis.com/maps/api/staticmap?center=40.714%2c%20-73.998&zoom=13&size=400x400&key='+document.getElementById("KEY").value;
      
     }
@@ -37,7 +37,7 @@
 	    	var apikey=document.getElementById("KEY").value;
 	    	var mapstaticurl="https://maps.googleapis.com/maps/api/staticmap?center=40.714%2c%20-73.998&zoom=13&size=400x400&key="+apikey;
 	    	document.getElementById("mapImg").src = mapstaticurl;    
-  	    	document.getElementById("run1000button").style.visibility = "visible";
+  	    	//document.getElementById("run1000button").style.visibility = "visible";
   		document.getElementById("resultmessage").innerText = 'WARNING!!!!!!KEY NOT PROTECTED.  I am using this key to plot a Maps in my website :)';
   		}
     
